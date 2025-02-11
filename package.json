@@ -1,5 +1,19 @@
 {
   "devDependencies": {
     "prettier": "^3.5.0"
+  },
+  "name": "tabnews-clone",
+  "version": "1.0.0",
+  "description": "respositorio para acompanhar o curso.dev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^13.1.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
