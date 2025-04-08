@@ -4,11 +4,11 @@ async function query(queryObject) {
   const { Client } = require("pg");
 
   const client = new Client({
-    host: "localhost", // ou o nome do container, tipo 'postgres'
-    port: 5432,
-    user: "postgres",
-    password: "localpassword",
-    database: "postgres",
+    host: process.env.POSTGRES_HOST,
+    port: process.env.POSTGRES_PORT,
+    user: process.env.POSTGRES_USER,
+    password: process.env.POSTGRES_PASSWORD,
+    database: process.env.POSTGRES_DATABASE,
   });
 
   client
