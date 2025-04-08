@@ -1,0 +1,38 @@
+# Dependências
+node_modules/
+
+# Build do Next.js
+.next/
+out/
+
+# Arquivos de log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Ambiente
+.env*
+!.env.example
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Arquivos do sistema de versionamento
+*.swp
+
+# Coverage de testes
+coverage/
+
+# Arquivos de exportação temporários
+*.tgz
+
+# Arquivos de lock opcionais
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
