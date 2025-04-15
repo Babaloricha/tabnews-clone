@@ -12,8 +12,6 @@ yarn-error.log*
 pnpm-debug.log*
 
 # Ambiente
-.env*
-!.env.example
 
 # Sistema operacional
 .DS_Store
