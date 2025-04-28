@@ -16,9 +16,14 @@ async function query(queryObject) {
     .then(() => console.log("Conectado ao PostgreSQL!"))
     .catch((err) => console.error("Erro de conexão:", err.stack));
 
-  const result = await client.query(queryObject);
-  await client.end();
-  return result;
+  try {
+    const result = await client.query(queryObject);
+    return result;
+  } catch (error) {
+    console.error(error);
+  } finally {
+    await client.end();
+  }
 }
 
 export default {
