@@ -1,0 +1,30 @@
+import migrationRunner from "node-pg-migrate";
+
+export default async function migrations(request, response) {
+  if (request.method == "GET") {
+    const migrations = await migrationRunner({
+      databaseUrl: process.env.DATABASE_URL,
+      dryRun: true,
+      dir: "infra/migrations",
+      direction: "up",
+      verbose: true,
+      migrationsTable: "pgmigrations",
+    });
+    return response.status(200).json(migrations);
+  }
+
+  if (request.method == "POST") {
+    const migrations = await migrationRunner({
+      databaseUrl: process.env.DATABASE_URL,
+      dryRun: false,
+      dir: "infra/migrations",
+      direction: "up",
+      verbose: true,
+      migrationsTable: "pgmigrations",
+    });
+
+    return response.status(200).json(migrations);
+  }
+
+  response.status(405).end();
+}
